@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SheCodes Plus</title>
+		<meta charset="UTF-8" />
+		<link href="Styles/homepage.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<img src="images/logo.png" alt="She Codes Plus Logo" class="logo" />
+		<h1>Missing files debugging</h1>
+
+		<h3>Challenge 1</h3>
+		<p>Fix the CSS</p>
+
+		<h3>Challenge 2</h3>
+		<p>
+			Move the CSS file into a different folder (name it something else), rename
+			the CSS file to something else and make sure it works
+		</p>
+		<h3>Challenge 3</h3>
+		<p>
+			Create a JavaScript file called hello.js (place it inside a folder called
+			javascript) which alert "Welcome to SheCodes" and include it here
+		</p>
+		<script src="JavaScript/hello.js"></script>
+	</body>
+</html>
+
+body {
+  font-family: sans-serif;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  margin: 0;
+  font-size: 34px;
+  line-height: 48px;
+}
+
+h1 h2,
+h3 {
+  color: #231d3c;
+}
+
+.logo {
+  display: block;
+  margin: 30px auto;
+  width: 150px;
+}
+
+alert("Welcome to SheCodes");
+
+package.json
+
+{
+  "name": "missing-files-debugging-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": []
+}
