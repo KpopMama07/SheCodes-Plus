@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SheCodes Plus</title>
+    <meta charset="UTF-8" />
+    
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <img src="images/logo.png" alt="She Codes Plus Logo" class="logo" />
+    <h1>CSS Positioning</h1>
+    <img src="images/positioning.png" alt="" class="img-positioning" />
+
+    <h3>Challenge 1</h3>
+    <p>Move this menu to fixed positioning, on the right side at the very top of the page</p>
+    <ul class="cities">
+      <li>Paris</li>
+      <li>Lisbon</li>
+      <li>Sydney</li>
+    </ul>
+    <h3>Challenge 2</h3>
+    <p>
+      Move the emojis on top of each other using relative positioning
+      <div class="emojis">
+        <span class="first">1️⃣</span>
+        <span class="second">2️⃣</span>
+        <span class="third">3️⃣</span>
+      </div>
+      <br/>
+    </p>
+    <h3>Challenge 3</h3>
+    <p>
+      Move the SheCodes Plus (top of the page) logo to absolute position, top, far left  <br />
+    </p>
+      
+    <script src="src/index.js"></script>
+  </body>
+</html>
+
+body {
+	font-family: sans-serif;
+	padding: 0 20px;
+}
+
+h1 {
+	text-align: center;
+	font-weight: 900;
+	margin: 0;
+	font-size: 34px;
+	line-height: 48px;
+}
+
+h1,
+h2,
+h3 {
+	color: #231d3c;
+}
+
+.logo {
+	display: block;
+	width: 150px;
+	position: absolute;
+	top: 0;
+}
+
+.img-positioning {
+	display: block;
+	margin: 30px auto;
+	width: 75%;
+}
+
+.cities {
+	background: #fff;
+	padding: 20px;
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+
+.second {
+	position: relative;
+	top: 20px;
+	right: 26px;
+}
+
+.third {
+	position: relative;
+	top: 40px;
+	right: 52px;
+}
