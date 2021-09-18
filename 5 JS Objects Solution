@@ -1,0 +1,60 @@
+let weather = {};
+console.log(weather);
+
+let weather2 = {
+	temp: 18,
+	humidity: 50,
+	windspeed: 3
+};
+console.log(weather2);
+
+console.log(weather2.temp);
+console.log(weather2.humidity);
+
+console.log([weather2.temp], [weather2.humidity], [weather2.windspeed]);
+
+let forecast = [
+	{
+		day: "Monday",
+		temp: 22,
+		humidity: 45,
+		windspeed: 3
+	},
+	{
+		day: "Tuesday",
+		temp: 25,
+		humidity: 65,
+		windspeed: 2
+	},
+	{
+		day: "Wednesday",
+		temp: 28,
+		humidity: 35,
+		windspeed: 1
+	},
+	{
+		day: "Thursday",
+		temp: 19,
+		humidity: 15,
+		windspeed: 6
+	},
+	{
+		day: "Friday",
+		temp: 29,
+		humidity: 75,
+		windspeed: 9
+	},
+	{
+		day: "Saturday",
+		temp: 27,
+		humidity: 95,
+		windspeed: 0
+	},
+	{
+		day: "Sunday",
+		temp: 12,
+		humidity: 5,
+		windspeed: 4
+	}
+];
+console.log(forecast);
