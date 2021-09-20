@@ -14,9 +14,5 @@ function isWindy(speed) {
 }
 
 isWindy(2);
-let speed = prompt("What is the wind speed?");
-if (speed >= 5) {
-	alert("It is windy");
-} else {
-	alert("It is not windy");
-}
+let currentSpeed = prompt("What is the wind speed?");
+isWindy(currentSpeed);
