@@ -1,0 +1,55 @@
+//Challenge 1
+let now = new Date();
+
+console.log(now);
+
+//Challenge 2
+
+console.log(now.getMilliseconds());
+//Challenge 3
+console.log(now.getDay());
+//Challenge 4
+console.log(now.getFullYear());
+//Challenge 5
+console.log(now.getMonth());
+//Challenge 6
+function formatDate(current) {
+	let days = [
+		"Sunday",
+		"Monday",
+		"Tuesday",
+		"Wednesday",
+		"Thursday",
+		"Friday",
+		"Saturday"
+	];
+
+	let months = [
+		"January",
+		"Feburary",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December"
+	];
+	let day = days[current.getDay()];
+	let month = months[current.getMonth()];
+
+	let year = now.getFullYear();
+	let date = now.getDate();
+
+	console.log(`Today is ${day}, ${month} ${date}, ${year}`);
+	//Challenge 7
+
+	let formattedDate = `Today is ${day}, ${month} ${date}, ${year}`;
+
+	return formattedDate;
+}
+
+console.log(formatDate(now));
