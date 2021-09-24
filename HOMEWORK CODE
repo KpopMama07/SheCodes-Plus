@@ -170,16 +170,16 @@ ul {
 
 
 function search(event) {
-	event.preventDefault();
-	let searchInput = document.querySelector("#searchInput");
+  event.preventDefault();
+  let searchInput = document.querySelector("#searchInput");
 
-	let h1 = document.querySelector("h1");
-	if (searchInput.value) {
-		h1.innerHTML = `The Weather Forecast in ${searchInput.value}`;
-	} else {
-		h1.innerHTML = null;
-		alert("Please enter a city!");
-	}
+  let h1 = document.querySelector("h1");
+  if (searchInput.value) {
+    h1.innerHTML = `The Weather Forecast in ${searchInput.value}`;
+  } else {
+    h1.innerHTML = null;
+    alert("Please enter a city!");
+  }
 }
 
 let form = document.querySelector("#search-form");
@@ -187,10 +187,12 @@ form.addEventListener("submit", search);
 
 let now = new Date();
 let time = document.querySelector("time");
+let date = now.getDate();
+let year = now.getFullYear();
 let hours = now.getHours();
 let todayMinute = now.getMinutes();
 if (todayMinute < 10) {
-	todayMinute = `0${todayMinute}`;
+  todayMinute = `0${todayMinute}`;
 }
 
 let p = document.querySelector("p");
@@ -198,14 +200,31 @@ let p = document.querySelector("p");
 p.innerHTML = `${hours}:${todayMinute}`;
 
 let days = [
-	"Sunday",
-	"Monday",
-	"Tuesday",
-	"Wednesday",
-	"Thursday",
-	"Friday",
-	"Saturday"
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
 ];
 let day = days[now.getDay()];
 
-weekday.innerHTML = `Today is ${day}`;
+let months = [
+  "January",
+  "Feburary",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+let month = months[now.getMonth()];
+
+weekday.innerHTML = `Today is ${day}, ${month} ${date}, ${year}`;
+
