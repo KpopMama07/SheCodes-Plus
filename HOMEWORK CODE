@@ -33,7 +33,7 @@
 					<li class="wind">Wind Speed: 2km/h</li>
 				</ul>
 				<i class="fas fa-cloud fa-3x"></i>
-				<div class="current" id="current">29℃</div>
+				<div class="current" id="actualDegree">29℃</div>
 			</h2>
 			<div class="row">
 				<div class="col-2">
@@ -92,8 +92,18 @@
 					autofocus="on"
 				/>
 				<button type="submit" class="btn btn-primary">Search</button>
-				<button type="button" class="btn btn-secondary btn-lg">℃</button>
-				<button type="button" class="btn btn-warning btn-lg">°F</button>
+				<sup
+					><span
+						id="celsius"
+						button
+						type="button"
+						class="btn btn-secondary btn-lg"
+						>°C</span
+					>
+					<span id="fahrenheit" type="button" class="btn btn-warning btn-lg"
+						>°F</span
+					></sup
+				>
 			</form>
 		</div>
 		<script src="src/index.js"></script>
@@ -168,18 +178,17 @@ ul {
 	font-size: 45px;
 }
 
-
 function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#searchInput");
+	event.preventDefault();
+	let searchInput = document.querySelector("#searchInput");
 
-  let h1 = document.querySelector("h1");
-  if (searchInput.value) {
-    h1.innerHTML = `The Weather Forecast in ${searchInput.value}`;
-  } else {
-    h1.innerHTML = null;
-    alert("Please enter a city!");
-  }
+	let h1 = document.querySelector("h1");
+	if (searchInput.value) {
+		h1.innerHTML = `The Weather Forecast in ${searchInput.value}`;
+	} else {
+		h1.innerHTML = null;
+		alert("Please enter a city!");
+	}
 }
 
 let form = document.querySelector("#search-form");
@@ -192,7 +201,7 @@ let year = now.getFullYear();
 let hours = now.getHours();
 let todayMinute = now.getMinutes();
 if (todayMinute < 10) {
-  todayMinute = `0${todayMinute}`;
+	todayMinute = `0${todayMinute}`;
 }
 
 let p = document.querySelector("p");
@@ -200,31 +209,44 @@ let p = document.querySelector("p");
 p.innerHTML = `${hours}:${todayMinute}`;
 
 let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+	"Sunday",
+	"Monday",
+	"Tuesday",
+	"Wednesday",
+	"Thursday",
+	"Friday",
+	"Saturday"
 ];
 let day = days[now.getDay()];
 
 let months = [
-  "January",
-  "Feburary",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+	"January",
+	"Feburary",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December"
 ];
 let month = months[now.getMonth()];
 
 weekday.innerHTML = `Today is ${day}, ${month} ${date}, ${year}`;
 
+function changeToFahrenheit() {
+	let changeCelsius = document.querySelector("#actualDegree");
+	changeCelsius.innerHTML = "84°F";
+}
+let celsius = document.querySelector("#fahrenheit");
+celsius.addEventListener("click", changeToFahrenheit);
+
+function changeToCelsius() {
+	let changeFahrenheit = document.querySelector("#actualDegree");
+	changeFahrenheit.innerHTML = "29°C";
+}
+let fahrenheit = document.querySelector("#celsius");
+fahrenheit.addEventListener("click", changeToCelsius);
