@@ -1,0 +1,23 @@
+//Challenge 1: Log your current latitude and longitude using the Geolocation API
+
+function showPosition(position) {
+	console.log(position.coords.latitude);
+	console.log(position.coords.longitude);
+}
+navigator.geolocation.getCurrentPosition(showPosition);
+
+//Challenge 2& 3: Log the current temperature where you are. & 	Change the h1 of this page by the current temperature
+
+function showTemperature(response) {
+	console.log(response.data.main.temp);
+	let temperature = Math.round(response.data.main.temp);
+	let weather = `It is ${temperature} degrees now in Shibukawa.`;
+	let h1 = document.querySelector("h1");
+	h1.innerHTML = weather;
+}
+
+let apiKey = "c6f8ef4575250284954db9f4dfa7a996";
+let units = "metric";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=36&lon=139&appid=${apiKey}&units=${units}`;
+
+axios.get(apiUrl).then(showTemperature);
